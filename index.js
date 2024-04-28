@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
+const allowedOrigins = ['http://localhost:5173', 'https://netflix-clone-frontend-ashy.vercel.app'];
+
 const corsOptions = {
     origin: function (origin, callback) {
         // Check if the origin is allowed
@@ -24,6 +26,7 @@ const corsOptions = {
     },
     credentials: true
 };
+
 
 app.use(cors(corsOptions));
 
